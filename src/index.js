@@ -7,10 +7,12 @@ import example from './models/example'
 
 const app = dva({
   initialState: {
-    products: [
-      { name: 'cz', id: 1 },
-      { name: 'ys', id: 2 },
-    ]
+    products: {
+      list: [
+        { name: 'cz', id: 1 },
+        { name: 'ys', id: 2 },
+      ]
+    }
   }
 })
 

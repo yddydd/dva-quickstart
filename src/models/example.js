@@ -7,6 +7,7 @@ export default {
 
   subscriptions: {
     setup({ dispatch, history }) {  // eslint-disable-line
+      console.log('??example??setup????', history)
     },
   },
 
@@ -18,6 +19,7 @@ export default {
 
   reducers: {
     save(state, action) {
+      console.log('????example/save', action)
       return { ...state, ...action.payload };
     },
   },

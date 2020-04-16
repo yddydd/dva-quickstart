@@ -2,26 +2,29 @@ import React from 'react';
 import { connect } from 'dva';
 import ProductList from '../components/Products';
 
-const Products = (store) => {
-  console.log('????', store)
-  const {dispatch, products} = store
+const Products = (props) => {
+  console.log('????', props)
+  const {dispatch, products} = props
   function handleDelete(id) {
+    // dispatch({
+    //   type: 'products/delete',
+    //   payload: id,
+    // });
     dispatch({
-      type: 'products/delete',
+      type: 'products/deleteAfter1Second',
       payload: id,
     });
   }
   return (
     <div>
       <h2>List of Products</h2>
-      <ProductList onDelete={handleDelete} products={products} />
+      <ProductList onDelete={handleDelete} products={products.list} />
     </div>
   );
 };
 
 // export default Products;
 export default connect((input) => {
-  console.log('connect', input)
   return {
     products: input.products,
   }

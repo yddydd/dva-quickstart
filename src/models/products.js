@@ -1,5 +1,5 @@
 import { delay } from 'dva/saga'
-import pathToRegexp from 'path-to-regexp';
+import { pathToRegexp } from 'path-to-regexp';
 
 export default {
   namespace: 'products',
